@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.home-link {
+  text-align: center;
+}
+
+.home-link a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: maroon;
+  padding: 5px 10px;
+}
+
+.home-link a:hover {
+  text-decoration: underline;
+}
+
+.calculator {
+  width: 300px;
+  background-color: #585858;
+  margin: 20px auto;
+  border: 2px solid #000;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.display {
+  display: block;
+  width: 100%;
+  text-align: right;
+  height: 45px;
+  font-size: 2.2em;
+  padding-right: 10px;
+  background-color: #8eb498;
+  border: 2px solid #787878;
+  font-family: Iceberg, sans-serif;
+  margin-bottom: 15px;
+}
+
+.display::-webkit-input-placeholder {
+  color: #555;
+}
+
+.calc-buttons::after {
+  display: block;
+  content: "";
+  clear: left;
+}
+
+.calc-buttons div {
+  width: 18%;
+  margin: 1%;
+  border-radius: 3px;
+  background-color: #383838;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  font-size: 1.5em;
+  height: 40px;
+  font-family: arial, sans-serif;
+  float: left;
+  box-shadow: 1px 1px 2px 0 #000,
+              0 1px 1px -2px #fff inset, /* this shadow is visible in firefox but not in chrome */
+              0 1px 1px -1px #fff inset; /* this shadow is visible in chrome but not in firefox */
+}
+
+.calc-buttons span {
+  display: block;
+}
+
+#equal {
+  width: 38%;
+}
+
+#del,
+#clear {
+  background-color: #c70505;
+}
+
+.calc-buttons div:hover {
+  background-color: #484848;
+  cursor: pointer;
+}
+
+.calc-buttons div:active {
+  box-shadow: 1px 1px 1px 0 #000 inset;
+  padding-left: 2px;
+  padding-top: 1px;
+}
+
+#del:hover,
+#clear:hover {
+  background-color: #d71515;
+}
