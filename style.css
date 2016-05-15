@@ -10,21 +10,6 @@ body {
   position: relative;
 }
 
-.home-link {
-  text-align: center;
-}
-
-.home-link a {
-  text-transform: uppercase;
-  text-decoration: none;
-  color: maroon;
-  padding: 5px 10px;
-}
-
-.home-link a:hover {
-  text-decoration: underline;
-}
-
 .calculator {
   width: 300px;
   background-color: #585858;
