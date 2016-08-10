@@ -17,6 +17,7 @@ body {
   border: 2px solid #000;
   border-radius: 5px;
   padding: 3px;
+  position: relative;
 }
 
 .display {
@@ -30,10 +31,28 @@ body {
   border: 2px solid #787878;
   font-family: Iceberg, sans-serif;
   margin-bottom: 15px;
+  position: relative;
+  cursor: default;
 }
 
 .display::-webkit-input-placeholder {
   color: #555;
+}
+
+#operation {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  font-size: 15px;
+  line-height: 13px;
+  z-index: 5;
+  top: 6px;
+  left: 6px;
+  color: #555;
+  border-radius: 2px;
+  border: 1px solid #555;
+  display: none;
+  text-align: center;
 }
 
 .calc-buttons::after {
@@ -42,9 +61,12 @@ body {
   clear: left;
 }
 
-.calc-buttons div {
+.calc-buttons input {
   width: 18%;
   margin: 1%;
+  border: none;
+  padding: 0;
+  outline: 0;
   border-radius: 3px;
   background-color: #383838;
   color: #fff;
@@ -57,6 +79,13 @@ body {
   box-shadow: 1px 1px 2px 0 #000,
               0 1px 1px -2px #fff inset, /* this shadow is visible in firefox but not in chrome */
               0 1px 1px -1px #fff inset; /* this shadow is visible in chrome but not in firefox */
+}
+
+.calc-buttons input:active,
+.calc-buttons input:focus,
+.calc-buttons input::-moz-focus-inner {
+  outline: 0;
+  border: 0;
 }
 
 .calc-buttons span {
@@ -72,12 +101,12 @@ body {
   background-color: #c70505;
 }
 
-.calc-buttons div:hover {
+.calc-buttons input:hover {
   background-color: #484848;
   cursor: pointer;
 }
 
-.calc-buttons div:active {
+.calc-buttons input:active {
   box-shadow: 1px 1px 1px 0 #000 inset;
   padding-left: 2px;
   padding-top: 1px;

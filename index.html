@@ -5,75 +5,38 @@
   <title>Calculator</title>
   <link href='https://fonts.googleapis.com/css?family=Iceberg' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="engine.js"></script>
 </head>
 <body>
   <div class="wrapper">
 
     <div class="calculator">
-      <input name="display" class="display" type="text" placeholder="0." maxlength="16">
+      <span id="operation"></span>
+      <input id="display" name="display" class="display" type="text" placeholder="0." maxlength="14" readonly="true">
 
       <div class="calc-buttons">
-        <div>
-          <span>7</span>
-        </div>
-        <div>
-          <span>8</span>
-        </div>
-        <div>
-          <span>9</span>
-        </div>
-        <div id="del">
-          <span>DEL</span>
-        </div>
-        <div id="clear">
-          <span>C</span>
-        </div>
-        <div>
-          <span>4</span>
-        </div>
-        <div>
-          <span>5</span>
-        </div>
-        <div>
-          <span>6</span>
-        </div>
-        <div>
-          <span id="multiply">&times;</span>
-        </div>
-        <div>
-          <span id="divide">&divide;</span>
-        </div>
-        <div>
-          <span>1</span>
-        </div>
-        <div>
-          <span>2</span>
-        </div>
-        <div>
-          <span>3</span>
-        </div>
-        <div>
-          <span id="plus">+</span>
-        </div>
-        <div>
-          <span id="minus">-</span>
-        </div>
-        <div>
-          <span>0</span>
-        </div>
-        <div>
-          <span id="plus-minus">&plusmn;</span>
-        </div>
-        <div>
-          <span id="dot">.</span>
-        </div>
-        <div id="equal">
-          <span>=</span>
-        </div> <!-- end ".buttons" -->
+        <input type="button" name="7" value="7">
+        <input type="button" name="8" value="8">
+        <input type="button" name="9" value="9">
+        <input type="button" name="DEL" value="DEL" id="del">
+        <input type="button" name="C" value="C" id="clear">
+        <input type="button" name="4" value="4">
+        <input type="button" name="5" value="5">
+        <input type="button" name="6" value="6">
+        <input type="button" name="multiply" value="&times;" id="*">
+        <input type="button" name="divide" value="&divide;" id="/">
+        <input type="button" name="1" value="1">
+        <input type="button" name="2" value="2">
+        <input type="button" name="3" value="3">
+        <input type="button" name="plus" value="+" id="+">
+        <input type="button" name="minus" value="-" id="-">
+        <input type="button" name="0" value="0">
+        <input type="button" name="plus-minus" value="&plusmn;" id="plus-minus">
+        <input type="button" name="dot" value="." id="dot">
+        <input type="button" name="equal" value="=" id="equal">
+      </div> <!-- end ".calc-buttons" -->
 
-      </div> <!-- end ".calculator" -->
-
-    </div> <!-- end ".wrapper" -->
-  </div>
+    </div> <!-- end ".calculator" -->
+  </div> <!-- end ".wrapper" -->
 </body>
 </html>
