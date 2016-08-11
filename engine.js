@@ -55,7 +55,7 @@ function initCalc() {
 
     if ( input.match(number) ) {
 
-      // if number starts with zero, then dot must follow it
+      // if number starts with zero, then dot or operator must follow it
       if ( input !== '.' && display.value.charAt(0) === '0' && display.value.charAt(1) !== '.' ) return;
 
       // no more than 14 characters
@@ -80,7 +80,9 @@ function initCalc() {
     }
 
     if ( input === '=' ) {
+      if ( !display.value ) return;
       display.value = eval(display.value);
+      operator = '';
       operationDisplay.style.display = 'none';
     }
 
