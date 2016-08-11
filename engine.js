@@ -21,6 +21,7 @@ function initCalc() {
   function action() {
     var input = this.value,
         id = this.id,
+        displayValue = display.value,
         i;
 
     if ( input === 'C' ) {
@@ -30,14 +31,14 @@ function initCalc() {
     }
 
     if ( input === 'DEL' ) {
-      display.value = display.value.slice(0, display.value.length - 1);
+      display.value = displayValue.slice(0, displayValue.length - 1);
       if ( !display.value ) {
         operationDisplay.style.display = 'none';
       }
     }
 
-    if ( id === 'plus-minus' ) {
-      display.value = display.value * (-1); // changing the sign
+    if ( id === 'plus-minus' && displayValue ) {
+      display.value = displayValue * (-1); // changing the sign
     }
 
     if ( operations.indexOf(id) !== -1 ) {
@@ -56,32 +57,36 @@ function initCalc() {
     if ( input.match(number) ) {
 
       // if number starts with zero, then dot or operator must follow it
-      if ( input !== '.' && display.value.charAt(0) === '0' && display.value.charAt(1) !== '.' ) return;
+      if ( displayValue.charAt(0) === '0' &&
+           input !== '.' &&
+           displayValue.charAt(1) !== '.' &&
+           operations.indexOf(displayValue.charAt(1)) === -1 ) return;
 
       // no more than 14 characters
-      if ( display.value.length >= 14 ) return;
+      if ( displayValue.length >= 14 ) return;
 
       // no multiple dots allowed in numbers
       if ( input === '.' ) {
-        i = display.value.length - 1;
-        while ( display.value.charAt(i).match(number) ) {
-          if ( display.value.charAt(i) === '.' ) return;
+        i = displayValue.length - 1;
+        while ( displayValue.charAt(i).match(number) ) {
+          if ( displayValue.charAt(i) === '.' ) return;
           i--;
         }
       }
 
-      if ( display.value && operator ) {
-        display.value = display.value + operator + input;
+      if ( displayValue && operator ) {
+        display.value = displayValue + operator + input;
         operator = '';
       } else {
-        display.value = display.value + input;
+        display.value = displayValue + input;
       }
 
     }
 
     if ( input === '=' ) {
-      if ( !display.value ) return;
-      display.value = eval(display.value);
+      if ( !displayValue ) return;
+      displayValue = eval(displayValue);
+      display.value = displayValue;
       operator = '';
       operationDisplay.style.display = 'none';
     }
