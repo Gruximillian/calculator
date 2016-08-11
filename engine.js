@@ -15,12 +15,16 @@ function initCalc() {
   display.value = '';
 
   for ( i = 0; i < len; i++ ) {
-    buttons[i].addEventListener('click', action);
+    buttons[i].addEventListener('click', function () {
+      action(this);
+    });
   }
 
-  function action() {
-    var input = this.value,
-        id = this.id,
+
+  // function that does the reading, calculations, and updates of the display
+  function action(element, input, id) {
+    var input = input || element.value,
+        id = id || element.id,
         displayValue = display.value,
         i;
 
@@ -43,10 +47,8 @@ function initCalc() {
 
     if ( operations.indexOf(id) !== -1 ) {
       operator = id;
-      if ( operator === '*' ) {
-        operationCharacter = '×';
-      } else if ( operator === '/' ) {
-        operationCharacter = '÷';
+      if ( operator === '*' || operator === '/' ) {
+        operationCharacter = input;
       } else {
         operationCharacter = operator;
       }
@@ -92,5 +94,39 @@ function initCalc() {
     }
 
   }
+
+  window.addEventListener('keypress', function(e) {
+    var keyID = e.key,
+        value;
+
+    console.log(keyID);
+
+    // mapping keys to values and IDs for the elements
+    switch (keyID) {
+      case '/':
+        // prevent firefox quick search
+        e.preventDefault();
+        value = '÷';
+        break;
+      case '*':
+        value = '×';
+        break;
+      case 'Enter':
+        value = '=';
+        break;
+      case 'Backspace':
+        value = 'DEL';
+        break;
+      case 'Delete':
+        value = 'C';
+        break;
+      default:
+        value = keyID;
+        break;
+    }
+
+    action(null, value, keyID);
+
+  });
 
 }
