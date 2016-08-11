@@ -26,7 +26,7 @@ function initCalc() {
     var input = input || element.value,
         id = id || element.id,
         displayValue = display.value,
-        i;
+        i, len = displayValue.length;
 
     if ( input === 'C' ) {
       expression = '';
@@ -60,17 +60,25 @@ function initCalc() {
 
       // if number starts with zero, then dot or operator must follow it
       if ( displayValue.charAt(0) === '0' &&
-           input !== '.' &&
-           displayValue.charAt(1) !== '.' &&
-           operations.indexOf(displayValue.charAt(1)) === -1 ) return;
+           len === 1 &&
+           input.match(/[0-9]/)
+         ) return;
+
+      i = len - 1;
+      // don't allow entering numbers if last number was zero and there is an operator in front of it
+      if ( input.match(/[0-9]/) &&
+           displayValue.charAt(i) === '0' &&
+           operations.indexOf(displayValue.charAt(i - 1)) !== -1
+         ) return;
 
       // no more than 14 characters
-      if ( displayValue.length >= 14 ) return;
+      if ( len >= 14 ) return;
 
       // no multiple dots allowed in numbers
       if ( input === '.' ) {
-        i = displayValue.length - 1;
-        while ( displayValue.charAt(i).match(number) ) {
+        // if last input is not an operator, go back character by character while they match a number
+        // if the character matches a dot, then do not allow inserting another one
+        while ( !operator && displayValue.charAt(i).match(number) ) {
           if ( displayValue.charAt(i) === '.' ) return;
           i--;
         }
@@ -88,6 +96,11 @@ function initCalc() {
     if ( input === '=' ) {
       if ( !displayValue ) return;
       displayValue = eval(displayValue);
+      if ( displayValue.toString().length >= 12 ) {
+        // this prevents displaying large number of decimal places
+        // it appears that it also prevents miscalculations that result in things like (0.1 + 0.2 != 0.3 )or (0.3 + 0.6 != 0.9)
+        displayValue = (displayValue * 1).toExponential(4);
+      }
       display.value = displayValue;
       operator = '';
       operationDisplay.style.display = 'none';
@@ -98,8 +111,6 @@ function initCalc() {
   window.addEventListener('keypress', function(e) {
     var keyID = e.key,
         value;
-
-    console.log(keyID);
 
     // mapping keys to values and IDs for the elements
     switch (keyID) {
