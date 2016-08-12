@@ -179,3 +179,10 @@ body {
 .documentation table td:first-child {
   font-weight: 900;
 }
+
+.code {
+  font-family: monospace;
+  background-color: #ccc;
+  padding: 3px 5px;
+  border-radius: 3px;
+}

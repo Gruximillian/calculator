@@ -58,6 +58,13 @@ function initCalc() {
     var key = e.key.toLowerCase(),
         button = getButton(key); // find to what button the 'key' corresponds
 
+    // if the minus is pressed with the shift key, then highlight the sign toggle instead
+    if ( key === '-' && e.shiftKey ) {
+      // this class adds highlight on the button when the keyboard is used for input
+      signToggle.classList.add('keyboard-active');
+      return;
+    }
+
     // prevent firefox quick search
     if ( key === '/' ) e.preventDefault();
 
@@ -74,6 +81,14 @@ function initCalc() {
         button = getButton(key); // find to what button the 'key' corresponds
 
     if ( !button ) return;
+
+    // if the minus is pressed with the shift key, then activate the sign toggle instead
+    if ( key === '-' && e.shiftKey ) {
+      signToggle.click();
+      // this class adds highlight on the button when the keyboard is used for input
+      signToggle.classList.remove('keyboard-active');
+      return;
+    }
 
     // simulate click on the button
     button.click();
