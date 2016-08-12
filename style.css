@@ -39,7 +39,7 @@ body {
   color: #555;
 }
 
-#operation {
+#operation-display {
   position: absolute;
   width: 15px;
   height: 15px;
