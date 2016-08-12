@@ -10,8 +10,8 @@ body {
   position: relative;
 }
 
-.calculator {
-  width: 300px;
+#calculator {
+  width: 400px;
   background-color: #585858;
   margin: 20px auto;
   border: 2px solid #000;
@@ -24,7 +24,7 @@ body {
   display: block;
   width: 100%;
   text-align: right;
-  height: 45px;
+  height: 65px;
   font-size: 2.2em;
   padding-right: 10px;
   background-color: #8eb498;
@@ -73,7 +73,7 @@ body {
   text-align: center;
   line-height: 40px;
   font-size: 1.5em;
-  height: 40px;
+  height: 60px;
   font-family: arial, sans-serif;
   float: left;
   box-shadow: 1px 1px 2px 0 #000,
@@ -88,6 +88,24 @@ body {
   border: 0;
 }
 
+.calc-buttons input:hover {
+  background-color: #484848;
+  cursor: pointer;
+}
+
+.calc-buttons input:active {
+  box-shadow: 1px 1px 1px 0 #000 inset;
+  padding-left: 2px;
+  padding-top: 1px;
+}
+
+#calculator .calc-buttons input.keyboard-active {
+  background-color: lime;
+  box-shadow: 1px 1px 1px 0 #000 inset;
+  padding-left: 2px;
+  padding-top: 1px;
+}
+
 .calc-buttons span {
   display: block;
 }
@@ -99,17 +117,6 @@ body {
 #del,
 #clear {
   background-color: #c70505;
-}
-
-.calc-buttons input:hover {
-  background-color: #484848;
-  cursor: pointer;
-}
-
-.calc-buttons input:active {
-  box-shadow: 1px 1px 1px 0 #000 inset;
-  padding-left: 2px;
-  padding-top: 1px;
 }
 
 #del:hover,
