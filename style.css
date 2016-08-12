@@ -13,11 +13,22 @@ body {
 #calculator {
   width: 400px;
   background-color: #585858;
-  margin: 20px auto;
   border: 2px solid #000;
   border-radius: 5px;
   padding: 3px;
   position: relative;
+  margin: auto;
+}
+
+
+@media (min-width: 1000px) {
+
+  #calculator {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+  }
+
 }
 
 .display {
@@ -122,4 +133,49 @@ body {
 #del:hover,
 #clear:hover {
   background-color: #d71515;
+}
+
+.documentation {
+  margin: 30px auto;
+  padding: 0 30px;
+}
+
+@media (min-width: 1000px) {
+
+  .documentation {
+    width: calc(100% - 500px);
+    min-width: 500px;
+    max-width: 1000px;
+    float: left;
+    margin-left: 30px;
+  }
+
+}
+
+.documentation li {
+  margin-bottom: 15px;
+}
+
+.documentation li ul {
+  margin-top: 15px;
+}
+
+.documentation table {
+  width: 100%;
+}
+
+.documentation table thead {
+  background-color: #ccc;
+}
+
+.documentation table tbody {
+  background-color: #eee;
+}
+
+.documentation table td {
+  padding-left: 30px;
+}
+
+.documentation table td:first-child {
+  font-weight: 900;
 }

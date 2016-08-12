@@ -35,8 +35,78 @@
         <input type="button" class="number" name="dot" value="." id="dot">
         <input type="button" class="control" name="equal" value="=" id="equal">
       </div> <!-- end ".calc-buttons" -->
-
     </div> <!-- end ".calculator" -->
+
+    <div class="documentation">
+
+      <h1>How to use the calculator:</h1>
+
+      <h2>General usage</h2>
+
+      <p>Input limitations:</p>
+
+      <ul>
+        <li><strong>The expression can start with a number, a minus sign or a dot.</strong></li>
+        <li><strong>If the expression starts with a minus sign only numbers or dot can follow. Minus sign can be removed with '&plusmn;' button.</strong></li>
+        <li><strong>After the zero that starts a number in the expression only the dot can follow.</strong></li>
+        <li><strong>After the dot only numbers can follow.</strong></li>
+        <li><strong>After the operation sign, only numbers and the dot can follow.</strong></li>
+        <li><strong>If the last input is the operation sign, pressing another operation will replace the previous one. Current operation is indicated in the top left corner of the display.</strong></li>
+        <li><strong>If the last operation sign is '*' or '/', for multiplication and division with negative numbers a minus can be toggled with '&plusmn;' button. The minus sign is displayed after the '*' or '/' sign.</strong></li>
+        <li><strong>If the last operation sign is '+' or '-', using the '&plusmn;' button will toggle the sign of the operation.</strong></li>
+        <li>
+          <strong>Using the '&plusmn;' toggle behaves different according to the expression:</strong>
+          <ul>
+            <li>If the last character in the expression is an operation sign, it toggles the sign of the next number to input.</li>
+            <li>If the last character in the expression is a digit, the expression is evaluated and then the evaluated expression is displayed with the changed sign. In other words, the '&plusmn;' toggles the sign of the whole expression.</li>
+          </ul>
+        </li>
+        <li><strong>The 'DEL' button deletes the last character from the expression.</strong></li>
+        <li><strong>The 'C' button clears the whole expression.</strong></li>
+        <li><strong>The '=' button evaluates the expression and displays the result on the calculator display.</strong></li>
+      </ul>
+
+      <h2>Keyboard bindings</h2>
+
+      <p>Operating the calculator with the mouse is straightforward, you just click the buttons with it. But it is possible to operate it with the keyboard by using the following key bindings:</p>
+
+      <table>
+        <thead>
+          <th>Calculator key</th>
+          <th>Keyboard binding key</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>=</td>
+            <td>Enter</td>
+          </tr>
+          <tr>
+            <td>DEL</td>
+            <td>Backspace</td>
+          </tr>
+          <tr>
+            <td>C</td>
+            <td>Delete</td>
+          </tr>
+          <tr>
+            <td>&plusmn;</td>
+            <td>'`', a back tick</td>
+          </tr>
+          <tr>
+            <td>Other buttons</td>
+            <td>The same buttons on the keyboard</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Warning!</h3>
+      <p>Don't mix the source of the input (mouse - keyboard) during one computation because it may lead to some buggy behavior. I was not able to sort it out. In general, pressing 'Enter' can sometimes change the sign of the result, but some other problems might occur too.</p>
+
+      <h3>Disclaimer</h3>
+      <p>This is my learning project. Under no circumstances is this calculator to be considered reliable for serious calculations. Use it just for fun. I will not be held responsible for any damage that using this calculator may cause.</p>
+
+    </div> <!-- end ".documentation" -->
+
   </div> <!-- end ".wrapper" -->
 </body>
 </html>
