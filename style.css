@@ -10,25 +10,31 @@ body {
   position: relative;
 }
 
+.container {
+  min-width: 300px;
+  max-width: 450px;
+  width: 80%;
+  margin: auto;
+}
+
+@media (min-width: 1000px) {
+
+  .container {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+  }
+
+}
+
 #calculator {
-  width: 400px;
+  width: 100%;
   background-color: #585858;
   border: 2px solid #000;
   border-radius: 5px;
   padding: 3px;
   position: relative;
   margin: 30px auto;
-}
-
-
-@media (min-width: 1000px) {
-
-  #calculator {
-    position: fixed;
-    top: 30px;
-    right: 30px;
-  }
-
 }
 
 .display {
@@ -143,7 +149,7 @@ body {
 @media (min-width: 1000px) {
 
   .documentation {
-    width: calc(100% - 500px);
+    width: calc(100% - 520px);
     min-width: 500px;
     max-width: 1000px;
     float: left;

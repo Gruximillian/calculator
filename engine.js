@@ -28,8 +28,6 @@ function initCalc() {
         return 'DEL';
       case 'delete':
         return 'C';
-      case ('`'): // CHANGE THIS TO BE WITH BUTTON MODIFIER 'Ctrl + `-`'
-        return '±'
       default:
         return '';
     }

@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Calculator</title>
   <link href='https://fonts.googleapis.com/css?family=Iceberg' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -10,32 +11,36 @@
 <body>
   <div class="wrapper">
 
-    <div id="calculator">
-      <span id="operation-display"></span>
-      <input id="display" name="display" class="display" type="text" placeholder="0." maxlength="14" readonly="true">
+    <div class="container">
 
-      <div class="calc-buttons">
-        <input type="button" class="number" name="7" value="7" id="7">
-        <input type="button" class="number" name="8" value="8" id="8">
-        <input type="button" class="number" name="9" value="9" id="9">
-        <input type="button" class="control" name="DEL" value="DEL" id="del">
-        <input type="button" class="control" name="C" value="C" id="clear">
-        <input type="button" class="number" name="4" value="4" id="4">
-        <input type="button" class="number" name="5" value="5" id="5">
-        <input type="button" class="number" name="6" value="6" id="6">
-        <input type="button" class="operation" name="multiply" value="&times;" id="*">
-        <input type="button" class="operation" name="divide" value="&divide;" id="/">
-        <input type="button" class="number" name="1" value="1" id="1">
-        <input type="button" class="number" name="2" value="2" id="2">
-        <input type="button" class="number" name="3" value="3" id="3">
-        <input type="button" class="operation" name="plus" value="+" id="+">
-        <input type="button" class="operation" name="minus" value="-" id="-">
-        <input type="button" class="number" name="0" value="0" id="0">
-        <input type="button" class="plus-minus" name="plus-minus" value="&plusmn;" id="plus-minus">
-        <input type="button" class="number" name="dot" value="." id="dot">
-        <input type="button" class="control" name="equal" value="=" id="equal">
-      </div> <!-- end ".calc-buttons" -->
-    </div> <!-- end ".calculator" -->
+      <div id="calculator">
+        <span id="operation-display"></span>
+        <input id="display" name="display" class="display" type="text" placeholder="0." maxlength="14" readonly="true">
+
+        <div class="calc-buttons">
+          <input type="button" class="number" name="7" value="7" id="7">
+          <input type="button" class="number" name="8" value="8" id="8">
+          <input type="button" class="number" name="9" value="9" id="9">
+          <input type="button" class="control" name="DEL" value="DEL" id="del">
+          <input type="button" class="control" name="C" value="C" id="clear">
+          <input type="button" class="number" name="4" value="4" id="4">
+          <input type="button" class="number" name="5" value="5" id="5">
+          <input type="button" class="number" name="6" value="6" id="6">
+          <input type="button" class="operation" name="multiply" value="&times;" id="*">
+          <input type="button" class="operation" name="divide" value="&divide;" id="/">
+          <input type="button" class="number" name="1" value="1" id="1">
+          <input type="button" class="number" name="2" value="2" id="2">
+          <input type="button" class="number" name="3" value="3" id="3">
+          <input type="button" class="operation" name="plus" value="+" id="+">
+          <input type="button" class="operation" name="minus" value="-" id="-">
+          <input type="button" class="number" name="0" value="0" id="0">
+          <input type="button" class="plus-minus" name="plus-minus" value="&plusmn;" id="plus-minus">
+          <input type="button" class="number" name="dot" value="." id="dot">
+          <input type="button" class="control" name="equal" value="=" id="equal">
+        </div> <!-- end ".calc-buttons" -->
+      </div> <!-- end ".calculator" -->
+
+    </div> <!-- end ".container" -->
 
     <div class="documentation">
 
