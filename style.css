@@ -110,12 +110,7 @@ body {
   cursor: pointer;
 }
 
-.calc-buttons input:active {
-  box-shadow: 1px 1px 1px 0 #000 inset;
-  padding-left: 2px;
-  padding-top: 1px;
-}
-
+.calc-buttons input:active,
 #calculator .calc-buttons input.keyboard-active {
   background-color: lime;
   box-shadow: 1px 1px 1px 0 #000 inset;
